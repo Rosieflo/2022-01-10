@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+*{margin: 0px; padding: 0px;}
+a{
+    color: #222328;
+    text-decoration: none;
+}
+ul,li,ol{list-style: none;}
+body{
+    color: #222328;
+    background-color: #fff;
+    font-size: 12px;
+    font-family: '맑은 고딕', arial, sans-serif;
+}
+
+
+
+/* 내비게이션 서식 */
+.gnb{margin: 10px 10px 0 10px;}
+.gnb > ul{}
+.gnb > ul > li{text-align: center;}
+.gnb > ul > li > a{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.gnb > ul > li > a:hover{
+    display: block;
+    background-color: rgb(249, 255, 158);
+}
+
+.sub{display: none;}
+.sub > li{line-height: 26px;}
+.sub > li:hover > a{
+    display: block;
+    background-color: rgb(255, 255, 236);
+}
+
+
+
+/* 레이아웃 서식 */
+#wrap{
+    width: 1000px;
+    height: 650px;
+}
+
+header{
+    width: 200px;
+    height: 650px;
+    float: left;
+}
+
+main{
+    width: 800px;
+    height: 550px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    /* 기본값이 no-wrap인걸 wrap으로 바꿔서 자식요소가 밑으로 내려오게 */
+}
+
+
+
+/* 이미지 슬라이드 */
+#slide{
+    position:relative;
+        width: 800px;
+        height: 350px;
+}
+#slide > ul{}
+#slide > ul > li{
+    position: absolute; /* 맨 마지막 li태그가 위로 올라옴 */
+}
+#slide > ul > li:first-child{z-index: 100;}
+#slide > ul > li > h3{
+    position: absolute;
+        left: 50%;
+        top: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    padding: 15px 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+/* 메인 컨텐츠 */
+#tab_con, #banner, #icon{
+    /* float: left; */
+    height: 200px;
+}
+#tab_con{
+    width: 280px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+#tab_con > ul{
+    display: flex;
+    position: relative;
+}
+#tab_con > ul > li > a{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+.con01, .con02{
+    position: absolute;
+        left: 0px;
+    display: none;
+}
+.con01 > ul > li{line-height: 20px;}
+.con01 > ul > li > a > span{float: right;}
+.con02 > ul{display: flex;}
+.con02 img{
+    width: 80px;
+    padding: 5px;
+}
+.act{
+    background-color: #084fd3 !important;
+    color: #fff !important;
+}
+
+#banner, #icon{width: 260px;}
+#icon img{width: 125px;}
+
+
+
+/* 레이어팝업 */
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+        top: 0px;
+        left: 0px;
+    z-index: 1000;
+}
+.modal > div{
+    width: 500px;
+    margin: 60px auto 0px auto;
+    text-align: right;
+}
+.modal img{width: 100%;}
+.modal a{
+    color: #fff;
+    background-color: #333;
+}
+
+
+
+/* 푸터 */
+footer{
+    position: relative;
+    width: 800px;
+    height: 100px;
+    float: left;
+    background: rgb(49, 49, 49);
+}
+footer > a > img{
+    position: absolute;
+        top: 6px;
+        left: 50%;
+    transform: translate(-50%);
+    width: 140px;
+}
+footer > ul{
+    position: absolute;
+        top: 38px;
+        left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    font-size: 10px;
+}
+footer > ul > li > a{
+    color: #ccc;
+    margin: 0px auto;
+}
+footer address{
+    width: 580px;
+    position: absolute;
+        bottom: 12px;
+        left: 50%;
+    transform: translate(-50%);
+    font-size: 10px;
+    font-style: normal;
+    text-align: center;
+    color: #ccc;
+    line-height: 14px;
+}
